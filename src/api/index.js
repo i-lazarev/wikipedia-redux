@@ -1,24 +1,27 @@
+
+
 export const getResult = (searchWord) => {
   return new Promise((resolve, reject) => {
-    fetch(
-      `https://de.wikipedia.org/w/api.php?action=query&list=search&srsearch=${searchWord}&format=json&srlimit=10`
-    )
+        fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${searchWord}`,{
+            mode: 'cors'
+        })
       .then((response) => {
         if (response.status === 200) {
-          responce
+          response
             .json()
             .then((data) => {
+                console.log(data)
               resolve(data);
             })
             .catch((error) => {
               reject(error);
             });
         } else {
-          reject(responce.status);
+          reject(response.status);
         }
       })
       .catch((error) => {
         reject(error);
-      });
+      })
   });
 };
