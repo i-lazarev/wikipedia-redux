@@ -1,5 +1,5 @@
 export const getResult = (searchWord) => {
-  return Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     fetch(
       `https://de.wikipedia.org/w/api.php?action=query&list=search&srsearch=${searchWord}&format=json&srlimit=10`
     )
