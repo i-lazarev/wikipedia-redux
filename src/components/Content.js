@@ -7,10 +7,10 @@ const Content = () => {
   return (
     <Container>
       <Row>
-        <Col style={{ border: "1px solid black" }} lg="3" md="3" sm="12">
+        <Col style={{ border: "1px solid grey" }} lg="3" md="3" sm="12">
           <SideBar />
         </Col>
-        <Col style={{ border: "1px solid black" }} lg="9" md="9" sm="12">
+        <Col style={{ border: "1px solid grey" }} lg="9" md="9" sm="12">
           <Description />
         </Col>
       </Row>

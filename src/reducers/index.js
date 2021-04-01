@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-const searchResults = {
+let searchResults = {
   data: [],
   status: "",
   selectedIdx: -1,
@@ -16,28 +16,27 @@ const resultReducer = (results = searchResults, action) => {
 
   switch (action.type) {
     case "START":
-      return { ...searchResults, data: [], status: "START", selectedIdx: -1 };
-    // break;
+      searchResults = { data: [], status: "START", selectedIdx: -1 };
+      return { ...searchResults };
     case "SUCCESS":
-      return {
-        ...searchResults,
+      searchResults = {
         data: action.payload.query.search,
         status: "SUCCESS",
         selectedIdx: -1,
       };
-    // break;
-    case "FAILD":
-      return { ...searchResults, data: [], status: "FAILD", selectedIdx: -1 };
-    // break;
+      return { ...searchResults };
+
+    case "FAILED":
+      searchResults = { data: [], status: "FAILED", selectedIdx: -1 };
+      return { ...searchResults };
+
     case "SELECT_INDEX":
-      return { ...searchResults, selectedIdx: action.payload };
-    // break;
+      searchResults.selectedIdx = action.payload;
+      return { ...searchResults };
+
     default:
       return results;
-    // break;
   }
-
-  //return results;
 };
 
 export default combineReducers({

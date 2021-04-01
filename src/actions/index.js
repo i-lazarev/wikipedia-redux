@@ -15,7 +15,7 @@ export const insertAction = (text) => {
       })
       .catch((error) => {
         dispatch({
-          type: "FAILD",
+          type: "FAILED",
           payload: error,
         });
       });

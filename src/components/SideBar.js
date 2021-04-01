@@ -13,8 +13,8 @@ const SideBar = (props) => {
     case "START":
       return <h1>LOODING.........</h1>;
     //break;
-    case "FAILD":
-      return <h1>FAILD.........</h1>;
+    case "FAILED":
+      return <h1>FAILED.........</h1>;
     //break;
     case "SUCCESS":
       return (
