@@ -8,12 +8,15 @@ import { createStore, applyMiddleware } from "redux";
 
 import reducers from "./reducers";
 import SearchBar from "./components/SearchBar";
+import Content from "./components/Content";
+
 
 const App = () => {
   return (
     <div>
       <h2 style={{ textAlign: "center" }}>Wikipedia Search</h2>
       <SearchBar />
+      <Content/>
     </div>
   );
 };

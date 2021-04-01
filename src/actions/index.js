@@ -15,9 +15,16 @@ export const insertAction = (text) => {
       })
       .catch((error) => {
         dispatch({
-          type: "FAILED",
+          type: "FAILD",
           payload: error,
         });
       });
+  };
+};
+
+export const selectIdxAction = (idx) => {
+  return {
+    type: "SELECT_INDEX",
+    payload: idx,
   };
 };
