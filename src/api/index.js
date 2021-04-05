@@ -11,6 +11,7 @@ export const getResult = (searchWord) => {
           response
             .json()
             .then((data) => {
+              console.log(data);
               //setTimeout(() => {
               resolve(data);
               //}, 10000);
